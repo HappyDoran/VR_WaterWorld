@@ -6,26 +6,21 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SwitchController : MonoBehaviour
 {
-    public Light targetLight; // 스위치로 제어할 라이트 컴포넌트
+    public List<Light> targetLights;
     public XRBaseInteractable interactable;
     private bool isOn = false; // 스위치 상태
 
     private void Start()
     {
-        interactable.selectEntered.AddListener(ToggleSwitch);
+        // interactable.selectEntered.AddListener(ToggleSwitch);
     }
 
-    private void ToggleSwitch(BaseInteractionEventArgs args)
+    public void ToggleSwitch(BaseInteractionEventArgs args)
     {
         isOn = !isOn;
-        targetLight.enabled = isOn;
-        if (isOn)
+        foreach (var light in targetLights)
         {
-            Debug.Log("Toggle ON");
-        }
-        else
-        {
-            Debug.Log("Toggle OFF");
+            light.enabled = isOn;
         }
     }
 }
