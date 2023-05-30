@@ -114,7 +114,7 @@ public class WaterRising : MonoBehaviour
         if (isRemoteRising)
         {
             // riseTime 값을 조금씩 감소시킴
-            riseTime -= 2f;
+            riseTime -= 3f;
 
             if (riseTime < 1f)
             {
@@ -123,7 +123,7 @@ public class WaterRising : MonoBehaviour
         }
         else{
              // riseTime 값을 조금씩 감소시킴
-            riseTime += 2f;
+            riseTime += 3f;
 
             if (riseTime > 40f)
             {
@@ -139,7 +139,7 @@ public class WaterRising : MonoBehaviour
         if (isShowerRising)
         {
             // riseTime 값을 조금씩 감소시킴
-            riseTime -= 2f;
+            riseTime -= 3f;
 
             if (riseTime < 1f)
             {
@@ -148,7 +148,7 @@ public class WaterRising : MonoBehaviour
         }
         else{
              // riseTime 값을 조금씩 감소시킴
-            riseTime += 2f;
+            riseTime += 3f;
 
             if (riseTime > 40f)
             {
@@ -164,7 +164,7 @@ public class WaterRising : MonoBehaviour
         if (isLightRising)
         {
             // riseTime 값을 조금씩 감소시킴
-            riseTime -= 2f;
+            riseTime -= 3f;
 
             if (riseTime < 1f)
             {
@@ -173,7 +173,7 @@ public class WaterRising : MonoBehaviour
         }
         else{
              // riseTime 값을 조금씩 감소시킴
-            riseTime += 2f;
+            riseTime += 3f;
 
             if (riseTime > 40f)
             {
@@ -189,7 +189,7 @@ public class WaterRising : MonoBehaviour
         if (isSaesuRising)
         {
             // riseTime 값을 조금씩 감소시킴
-            riseTime -= 2f;
+            riseTime -= 3f;
 
             if (riseTime < 1f)
             {
@@ -198,7 +198,7 @@ public class WaterRising : MonoBehaviour
         }
         else{
              // riseTime 값을 조금씩 감소시킴
-            riseTime += 2f;
+            riseTime += 3f;
 
             if (riseTime > 40f)
             {
