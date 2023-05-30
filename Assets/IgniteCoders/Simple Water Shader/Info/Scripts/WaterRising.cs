@@ -42,7 +42,7 @@ public class WaterRising : MonoBehaviour
         {
             // 물이 최종 높이까지 차오르는 비율을 계산
             float progress = Mathf.Clamp01(Time.deltaTime / riseTime);
-
+            
             // 물의 현재 높이를 증가시킴
             currentHeight = Mathf.Lerp(currentHeight, targetHeight, progress);
 
@@ -63,6 +63,17 @@ public class WaterRising : MonoBehaviour
     public void StartRising()
     {
         isRising = !isRising;
+
+        if (isRising)
+        {
+            // riseTime 값을 조금씩 감소시킴
+            riseTime -= 2f;
+
+            if (riseTime < 1f)
+            {
+                riseTime = 1f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
     }
 
     public void StopRising()
