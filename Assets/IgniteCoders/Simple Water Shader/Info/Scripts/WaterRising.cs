@@ -8,11 +8,17 @@ public class WaterRising : MonoBehaviour
     public GameObject waterSight;
 
     public float targetHeight = 4f; // 물이 차오를 최종 높이
-    public float riseTime = 30f; // 물이 차오르는 데 걸리는 시간
+    public float riseTime = 40f; // 물이 차오르는 데 걸리는 시간
 
     private float initialHeight; // 초기 물의 높이
     private float currentHeight; // 현재 물의 높이
     private bool isRising = false; // 물이 차오르는 중인지 여부
+    
+    private bool isRemoteRising = false; // 물이 차오르는 중인지 여부
+    private bool isShowerRising = false; // 물이 차오르는 중인지 여부
+    private bool isLightRising = false; // 물이 차오르는 중인지 여부
+    private bool isSaesuRising = false; // 물이 차오르는 중인지 여부
+    
     private float elapsedTime = 0f; // 경과한 시간
 
     public static bool isWater = false;
@@ -38,7 +44,23 @@ public class WaterRising : MonoBehaviour
 
     private void Update()
     {
-        if (isRising && currentHeight < targetHeight)
+        // if (isRising && currentHeight < targetHeight)
+        // {
+        //     // 물이 최종 높이까지 차오르는 비율을 계산
+        //     float progress = Mathf.Clamp01(Time.deltaTime / riseTime);
+            
+        //     // 물의 현재 높이를 증가시킴
+        //     currentHeight = Mathf.Lerp(currentHeight, targetHeight, progress);
+
+        //     // 물의 위치를 업데이트
+        //     Vector3 newPosition = transform.position;
+        //     newPosition.y = currentHeight;
+        //     transform.position = newPosition;
+        // }
+        if ((isRemoteRising && currentHeight < targetHeight)||
+        (isShowerRising && currentHeight < targetHeight)||
+        (isLightRising && currentHeight < targetHeight)||
+        (isSaesuRising && currentHeight < targetHeight))
         {
             // 물이 최종 높이까지 차오르는 비율을 계산
             float progress = Mathf.Clamp01(Time.deltaTime / riseTime);
@@ -60,11 +82,11 @@ public class WaterRising : MonoBehaviour
         }
     }
 
-    public void StartRising()
+    public void StartRising(bool isRising)
     {
         isRising = !isRising;
 
-        if (isRising)
+        if (Rising)
         {
             // riseTime 값을 조금씩 감소시킴
             riseTime -= 2f;
@@ -72,6 +94,115 @@ public class WaterRising : MonoBehaviour
             if (riseTime < 1f)
             {
                 riseTime = 1f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+        else{
+             // riseTime 값을 조금씩 감소시킴
+            riseTime += 2f;
+
+            if (riseTime > 40f)
+            {
+                riseTime = 40f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+    }
+
+    public void StartRemoteRising()
+    {
+        isRemoteRising = !isRemoteRising;
+
+        if (isRemoteRising)
+        {
+            // riseTime 값을 조금씩 감소시킴
+            riseTime -= 2f;
+
+            if (riseTime < 1f)
+            {
+                riseTime = 1f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+        else{
+             // riseTime 값을 조금씩 감소시킴
+            riseTime += 2f;
+
+            if (riseTime > 40f)
+            {
+                riseTime = 40f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+    }
+
+    public void StartShowerRising()
+    {
+        isShowerRising = !isShowerRising;
+
+        if (isShowerRising)
+        {
+            // riseTime 값을 조금씩 감소시킴
+            riseTime -= 2f;
+
+            if (riseTime < 1f)
+            {
+                riseTime = 1f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+        else{
+             // riseTime 값을 조금씩 감소시킴
+            riseTime += 2f;
+
+            if (riseTime > 40f)
+            {
+                riseTime = 40f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+    }
+
+    public void StartLightRising()
+    {
+        isLightRising = !isLightRising;
+
+        if (isLightRising)
+        {
+            // riseTime 값을 조금씩 감소시킴
+            riseTime -= 2f;
+
+            if (riseTime < 1f)
+            {
+                riseTime = 1f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+        else{
+             // riseTime 값을 조금씩 감소시킴
+            riseTime += 2f;
+
+            if (riseTime > 40f)
+            {
+                riseTime = 40f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+    }
+
+    public void StartSaesuRising()
+    {
+        isSaesuRising = !isSaesuRising;
+
+        if (isSaesuRising)
+        {
+            // riseTime 값을 조금씩 감소시킴
+            riseTime -= 2f;
+
+            if (riseTime < 1f)
+            {
+                riseTime = 1f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+            }
+        }
+        else{
+             // riseTime 값을 조금씩 감소시킴
+            riseTime += 2f;
+
+            if (riseTime > 40f)
+            {
+                riseTime = 40f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
             }
         }
     }
