@@ -82,30 +82,30 @@ public class WaterRising : MonoBehaviour
         }
     }
 
-    public void StartRising(bool isRising)
-    {
-        isRising = !isRising;
+    // public void StartRising(bool isRising)
+    // {
+    //     isRising = !isRising;
 
-        if (Rising)
-        {
-            // riseTime 값을 조금씩 감소시킴
-            riseTime -= 2f;
+    //     if (Rising)
+    //     {
+    //         // riseTime 값을 조금씩 감소시킴
+    //         riseTime -= 2f;
 
-            if (riseTime < 1f)
-            {
-                riseTime = 1f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
-            }
-        }
-        else{
-             // riseTime 값을 조금씩 감소시킴
-            riseTime += 2f;
+    //         if (riseTime < 1f)
+    //         {
+    //             riseTime = 1f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+    //         }
+    //     }
+    //     else{
+    //          // riseTime 값을 조금씩 감소시킴
+    //         riseTime += 2f;
 
-            if (riseTime > 40f)
-            {
-                riseTime = 40f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
-            }
-        }
-    }
+    //         if (riseTime > 40f)
+    //         {
+    //             riseTime = 40f; // 최소값으로 제한 (0 이하로 내려가지 않도록 함)
+    //         }
+    //     }
+    // }
 
     public void StartRemoteRising()
     {
