@@ -1110,6 +1110,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 344901554}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+        m_MethodName: set_isOn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls:
@@ -1928,7 +1940,7 @@ MonoBehaviour:
   Camera: {fileID: 421140184}
   waterSight: {fileID: 1523496361}
   targetHeight: 4
-  riseTime: 30
+  riseTime: 50
   waterColor: {r: 0, g: 0, b: 0, a: 0}
   waterFogDensity: 0
 --- !u!114 &458522066
@@ -2281,6 +2293,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1707169579}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+        m_MethodName: set_isOn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
@@ -17076,6 +17100,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 403322664}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+        m_MethodName: set_isOn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -17564,7 +17600,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 424784785}
         m_TargetAssemblyTypeName: WaterRising, Assembly-CSharp
-        m_MethodName: StartRising
+        m_MethodName: StartLightRising
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18902,7 +18938,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 424784785}
         m_TargetAssemblyTypeName: WaterRising, Assembly-CSharp
-        m_MethodName: StartRising
+        m_MethodName: StartLightRising
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

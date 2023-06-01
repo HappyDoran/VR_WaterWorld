@@ -8,7 +8,7 @@ public class WaterRising : MonoBehaviour
     public GameObject waterSight;
 
     public float targetHeight = 4f; // 물이 차오를 최종 높이
-    public float riseTime = 40f; // 물이 차오르는 데 걸리는 시간
+    public float riseTime = 50f; // 물이 차오르는 데 걸리는 시간
 
     private float initialHeight; // 초기 물의 높이
     private float currentHeight; // 현재 물의 높이
