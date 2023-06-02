@@ -18457,18 +18457,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Text hangeul andamn so text font download hae ya damn ok? font dawnload
-    hae juo
+  m_text: "\uAC00\uB098\uB2E4\uB77C\uB9C8\uBC14\uC0AC \uC544\uC790\uCC28\uCE74\uD0C0\uD30C\uD558"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 500c8b014e8c041b8982d40b1db00225, type: 2}
-  m_sharedMaterial: {fileID: -6674944201535329505, guid: 500c8b014e8c041b8982d40b1db00225, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b6cc1eb95ed2049d8849d58695296f7c, type: 2}
+  m_sharedMaterial: {fileID: -6914574290895250969, guid: b6cc1eb95ed2049d8849d58695296f7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284301106
+  m_fontColor: {r: 0.19607845, g: 0.24705884, b: 0.3647059, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -18501,7 +18500,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
