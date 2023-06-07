@@ -8,14 +8,13 @@ public class WaterRising : MonoBehaviour
 
     public GameObject waterSight;
 
-    public float targetHeight = 4f; // 물이 차오를 최종 높이
-    public float riseTime = 50f; // 물이 차오르는 데 걸리는 시간
+    public float targetHeight = 3.5f; // 물이 차오를 최종 높이
+    public float riseTime = 70f; // 물이 차오르는 데 걸리는 시간
 
     private float initialHeight; // 초기 물의 높이
     private float currentHeight; // 현재 물의 높이
 
     private bool isRemoteRising = false; // 물이 차오르는 중인지 여부
-    private bool isShowerRising = false; // 물이 차오르는 중인지 여부
     private bool isLightRising = false; // 물이 차오르는 중인지 여부
     private bool isSaesuRising = false; // 물이 차오르는 중인지 여부
 
@@ -33,25 +32,35 @@ public class WaterRising : MonoBehaviour
     private void Update()
     {
         if (
-            (isRemoteRising || isShowerRising || isLightRising || isSaesuRising)
+            (isRemoteRising || isLightRising || isSaesuRising)
             && currentHeight < targetHeight)
         {
-            // 물이 최종 높이까지 차오르는 비율을 계산
-            float progress = Mathf.Clamp01(Time.deltaTime / riseTime);
+            var count = 0;
+            if (isRemoteRising)
+                count++;
+            if (isLightRising)
+                count++;
+            if (isSaesuRising)
+                count++;
 
-            // 물의 현재 높이를 증가시킴
-            currentHeight = Mathf.Lerp(currentHeight, targetHeight, progress);
+            var ratio = (currentHeight - initialHeight) / (targetHeight - initialHeight);
+            var countRatio = count / 3f;
+            if (ratio <= countRatio)
+            {
+                float progress = Mathf.Clamp01(Time.deltaTime / riseTime);
+                currentHeight = Mathf.Lerp(currentHeight, targetHeight, progress);
 
-            // 물의 위치를 업데이트
-            Vector3 currentPos = transform.position;
-            transform.position = new Vector3(
-                currentPos.x,
-                currentHeight,
-                currentPos.z
-            );
+                // 물의 위치를 업데이트
+                Vector3 currentPos = transform.position;
+                transform.position = new Vector3(
+                    currentPos.x,
+                    currentHeight,
+                    currentPos.z
+                );
+            }
         }
 
-        if (currentHeight > Camera.transform.position.y + 1.7125)
+        if (currentHeight > Camera.transform.position.y + 2)
         {
             waterSight.SetActive(true);
         }
@@ -61,12 +70,6 @@ public class WaterRising : MonoBehaviour
     {
         isRemoteRising = !isRemoteRising;
         StartRising(isRemoteRising);
-    }
-
-    public void StartShowerRising()
-    {
-        isShowerRising = !isShowerRising;
-        StartRising(isShowerRising);
     }
 
     public void StartLightRising()
